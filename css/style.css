@@ -18,7 +18,7 @@ body {
 .menu-logo {
     display: flex;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
+    
     
 }
 .menu-logo, .menu-search, .menu-last{
@@ -29,6 +29,9 @@ body {
     padding-left: 1rem;
     
 }
+/* i#user{
+    display: none;
+} */
 .menu-logo .fa-youtube-play {
     color: red;
     font-size: 2rem;
@@ -36,8 +39,9 @@ body {
 .menu-logo .fa-youtube-play .logoalt {
     color: black;
     padding-left: 1px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    font-family: Verdana, 'Geneva', Tahoma, sans-serif;
 }
 .menu-search {
     width: 48rem;
@@ -54,6 +58,9 @@ body {
     width: 3rem;
     border: 1px  solid gainsboro;
     border-left: none;
+}
+.menu-search .fa-user {
+    display: none;
 }
 .fa-microphone {
     background-color: gainsboro;
@@ -83,22 +90,33 @@ body {
 button:hover {
     cursor: pointer;
 }
+/* Tweaking Iframe */
+.ytp-button:not([aria-disabled=true]):not([disabled]):not([aria-hidden=true]) {
+    cursor: pointer;
+    display: none;
+}
+
+
 /* Secondary Header Styles */
 .secondary-nav {
     display: flex;
     justify-content: center;
-    height: 3rem;
+    height: 50px;
     align-items: center;
-    width: 84.2%;
+    width: 85%;
     position: absolute;
     right: 0;
-    overflow: hidden;
+    overflow-x: scroll;
     border-top: 1px solid gainsboro;
     border-bottom: 1px solid gainsboro;
     background-color: white;
+
+}
+.secondary-nav::-webkit-scrollbar {
+    display: none;
 }
 .secondary-nav .nav-center {
-    height: 2rem;
+    height: 38px;
     display: flex;
     background-color: white;
     align-items: center;
@@ -108,14 +126,20 @@ button:hover {
     color: black;
 }
 .secondary-nav p {
-    margin: 1rem 0.5rem;
+    margin: 0rem 0.5rem;
     background-color: rgba(192, 192, 192, 0.329);
-    padding: 5px 10px;
+    padding: 4px 8px;
     border-radius: 50px;
     width: max-content;
     border: 1px solid gainsboro;
     cursor: pointer;
-    z-index: 1;
+    
+}
+.secondary-nav p {
+    margin: 0rem 0.5rem;
+    background-color: rgba(192, 192, 192, 0.329);
+    
+    
 }
 .secondary-nav .control {
     position: absolute;
@@ -123,20 +147,21 @@ button:hover {
     font-size: 2em;
     background-color: none;
     z-index: 1;
-    display: flex;
+    display: none;
     justify-content: space-between;
     width: 100%;
     
 }
-.control span {
+/* .control span {
     background-color: rgba(255, 255, 255, 0.87);
     padding:2rem 1rem;
     font-size: 10px;
     cursor: pointer;
-}
+} 
 /* Header Styles End */
 main {
     display: flex;
+/* background-color: red; */
 }
 .sidebar {
     width: 17%;
@@ -145,7 +170,7 @@ main {
     z-index: 1;
 }
 .main {
-    width: 90%;
+    width: 100%;
     overflow-y: scroll;
     height: 37.3rem;
     /* background-color: silver; */
@@ -158,7 +183,7 @@ main {
 .main:hover::-webkit-scrollbar {
     display: block;
     width: 0.5em;
-    overflow: auto;
+    overflow-y: scroll;
     height: 1em;
     background-color: rgb(252, 249, 249);
 }
@@ -172,16 +197,18 @@ main {
     /* padding-left: 1rem; */
 }
 .sidebar ul li {
-    padding: 0.8rem 0rem;
-    padding-left: 1rem;
+    padding: 0.2rem 0rem;
+    padding-left: 1.8rem;
+    flex-grow: 1;
 }
 .sidebar ul li img {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
 }
 .sidebar ul li a {
     text-decoration: none;
-    padding-left: 15px;
+    font-size: 12px;
+    padding-left: 25px;
     color: black;
 
 }
@@ -215,7 +242,7 @@ main {
     font-weight: 600;
 }
 .sidebar footer ul li {
-    padding: 5px;
+    padding: 1px;
 }
 .sidebar footer ul li a {
     color: rgb(95, 107, 107);
@@ -226,6 +253,14 @@ main {
 }
 .sidebar footer ul.guide-info {
     font-size: 12px;
+}
+.sidebar footer ul.guide-info li {
+    margin: 0;
+    padding: 0;
+}
+.sidebar footer ul.guide-info li a {
+    font-size: 10px;
+    margin: 0;
 }
 .sidebar ul li:hover{
     background-color: rgba(192, 192, 192, 0.315);
@@ -258,9 +293,22 @@ main {
 .second-nav i{
     color: white;
     background-color: rgb(46, 26, 26);
-    padding: 5px;
+    padding: 8px;
     border-radius: 50%;
     font-size: 15px;
+}
+.channels {
+    border-bottom: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
+    padding: 5rem 0rem;
+    margin: 1rem 0rem;
+}
+.second-nav .channels .fa-plus {
+    border: 1px solid black;
+    margin-right: 1rem;
+    background-color: white;
+    color: black;
+    
 }
 /* Main styles */
 
@@ -270,26 +318,25 @@ main {
     height: 12rem;
 }
 .padded {
-    margin: 2.9rem 0rem;
-    padding: 0.8rem;
-    height: 92%;
-    background-color: white;
+    margin-top: 3.2rem;
+    padding: 1rem;
+    /* background-color: rgb(46, 13, 13); */
+    display: grid;
+    grid-template-columns: repeat(4, 4fr);
+    row-gap: 15px;
+    column-gap: 15px;
+    grid-auto-rows: minmax(5rem, auto);
+    padding: 10px 5px;
+    
 }
-.aisle1{
-    /* background-color: red; */
-    height: 50%;
-    margin-bottom: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.down {
+    margin-top: 1rem;
 }
 
 .content {
     /* background-color: blueviolet; */
     height: 96%;
-    width: 21%;
     margin: 5px ;
-    flex-grow: 1;
     /* box-shadow: 1px 1px gainsboro, -1px -1px gainsboro; */
 }
 .content iframe {
@@ -305,10 +352,9 @@ main {
 .detail-top {
     padding: 0px 0px;
 }
-.detail-top .fa-user {
-    background-color: white;
-    padding: 1rem 1.1rem;
+.detail-top img {
     border-radius: 50%;
+    height: 3rem;
     border: 1px solid gainsboro;
 }
 .detail-top p {
@@ -325,7 +371,7 @@ main {
 }
 
 .video-details .details-bottom p {
-    font-size: 14px;
+    font-size: 10px;
     padding-left: 4.5rem;
     color: rgb(67, 80, 80);
 }
@@ -333,11 +379,24 @@ main {
     display: block;
 }
 /* Youtube Shorts Styles */
+.title-div {
+    padding: 1.4rem 1rem;
+    height: 4rem;
+}
+.title-div img {
+    height: 35px;
+}
+.title-div p {
+    font-size: 24px;
+}
 .shorts {
-    height: 32rem;
+    height: 23rem;
     background-color: white;
     padding: 0;
-    width: 100%;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 5fr);
+    width: 100%; 
 }
 .content-wrapper{
     display: flex;
@@ -345,7 +404,313 @@ main {
     align-items: center;
     width: 100%;
 }
-.content-wrapper .content iframe {
-    height: 18rem;
+.shorts .content iframe {
+    height: 19rem;
     width: 90%;
+}
+/* Grid Designs */
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8 {
+    width: 98%;
+}
+
+/* Media Queries */
+@media (max-width: 1173px){
+    main {
+        display: block;
+        width: 100%;
+    }
+    .ytp-cued-thumbnail-overlay-image {
+        display: none;
+    }
+    /* Header Queries */
+    header {
+        /* position: fixed; */
+        top: 0;
+        background-color: white;
+        height: 3rem;
+    }
+    .header {
+        box-shadow: 0px 2px gray;
+    }
+    .menu-logo .ham .fa-bars {
+        display: none
+        ;
+    }
+    .menu-logo i {
+        padding-left: 0rem;
+        
+    }
+    .menu-logo .fa-youtube-play {
+        color: red;
+        font-size: 1rem;
+    }
+    .menu-logo .fa-youtube-play .logoalt {
+        color: black;
+        padding-left: 1px;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: Verdana, 'Geneva', Tahoma, sans-serif;
+    }
+    .menu-search .fa-user {
+        display: block;
+    }
+    i#user {
+        border: 1px solid gainsboro;
+        padding: 10px 12px;
+        border-radius: 50%;
+        color: #625d5d;
+        margin-left: 1rem;
+    }
+    .content iframe {
+        width: 100%;
+        cursor: pointer;
+        height: 13rem;
+    }
+    .menu-search {
+        width: 100%; 
+        display: flex;
+        justify-content: right;
+    }
+    .menu-search input, .fa-microphone {
+        display: none;
+    }
+    .menu-last {
+        display: none;
+    }
+
+    
+    /* Sidebar Queries */
+    .sidebar {
+        width: 100%;
+        height: 2.5rem;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+
+    }
+
+    .primary-nav li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   .sidebar .primary-nav .hide {
+        display: none;
+    }
+    
+    .sidebar .primary-nav {
+        display: flex;
+        width: 100%;
+    }
+    
+    
+    .sidebar ul li a {
+        display: none;
+    
+    }
+    .main {
+        width: 100%; 
+        overflow-y: scroll;
+        height: auto;
+        /* background-color: silver; */
+    }
+    .sidebar .kids, .utilities, .contact-info, .guide-info, .signin, .second-nav, h5 {
+        display: none;
+    }
+    .secondary-nav {
+        /* display: none; */
+        width: 100%;
+        font-size: 12px;
+        overflow-x: scroll;
+        box-shadow: 0px 0px gainsboro, -1px -1px gainsboro;
+    }
+    .secondary-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .secondary-nav .control {
+        display: none;
+    }
+
+    .padded {
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+        width: 100%; 
+        margin-top: 4rem;
+    }
+    .details-bottom {
+        display: flex;
+        justify-content: center;
+    }
+    .video-details .details-bottom p {
+        font-size: 10px;
+        padding-left: 0.9rem;
+        color: rgb(67, 80, 80);
+    }
+    .shorts {
+        width: 100vw;
+        overflow-x: scroll;
+        height: 28rem;
+    }
+    .shorts::-webkit-scrollbar {
+        display: none;
+    }
+    .shorts .content iframe {
+        height: 21rem;
+        width: 20vw;
+        
+    }
+    footer .copyright {
+        display: none;
+    }
+}
+@media (max-width: 860px) {
+
+    main {
+        display: block;
+        width: 100%;
+    }
+    /* Header Queries */
+    header {
+        /* position: fixed; */
+        top: 0;
+        background-color: white;
+        height: 3rem;
+    }
+    .header {
+        box-shadow: 0px 2px gray;
+    }
+    .menu-logo .ham .fa-bars {
+        display: none
+        ;
+    }
+    .menu-logo i {
+        padding-left: 0rem;
+        
+    }
+    .menu-logo .fa-youtube-play {
+        color: red;
+        font-size: 1rem;
+    }
+    .menu-logo .fa-youtube-play .logoalt {
+        color: black;
+        padding-left: 1px;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: Verdana, 'Geneva', Tahoma, sans-serif;
+    }
+    .menu-search {
+        width: 100%; 
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    .menu-search input, .fa-microphone {
+        display: none;
+    }
+    .menu-search .fa-user {
+        display: none;
+    }
+    i#user {
+        border: 1px solid gainsboro;
+        padding: 10px 12px;
+        border-radius: 50%;
+        color: #625d5d;
+        margin-left: 1rem;
+    }
+    .menu-last {
+        display: none;
+    }
+
+    
+    /* Sidebar Queries */
+    .sidebar {
+        width: 100%;
+        height: 2.5rem;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+
+    }
+
+    .primary-nav li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   .sidebar .primary-nav .hide {
+        display: none;
+    }
+    
+    .sidebar .primary-nav {
+        display: flex;
+        width: 100%;
+    }
+    
+    
+    .sidebar ul li a {
+        display: none;
+    
+    }
+    .main {
+        width: 100%; 
+        overflow-y: scroll;
+        height: auto;
+        /* background-color: silver; */
+    }
+    .sidebar .kids, .utilities, .contact-info, .guide-info, .signin, .second-nav, h5 {
+        display: none;
+    }
+    .secondary-nav {
+        /* display: none; */
+        width: 100%;
+        font-size: 12px;
+        overflow-x: scroll;
+        box-shadow: 0px 0px gainsboro, -1px -1px gainsboro;
+    }
+    .secondary-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .secondary-nav .control {
+        display: none;
+    }
+
+    .padded {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        width: 100%; 
+        margin-top: 4rem;
+    }
+    .shorts {
+        width: 100vw;
+        overflow-x: scroll;
+        height: 28rem;
+    }
+    .shorts::-webkit-scrollbar {
+        display: none;
+    }
+    .shorts .content iframe {
+        height: 21rem;
+        width: 30vw;
+        
+    }
+    footer .copyright {
+        display: none;
+    }
+    
+}
+@media (max-width: 460px) {
+
+    .padded {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        
+        
+    }
+    .shorts .content iframe {
+        height: 21rem;
+        width: 80vw;
+        
+    }
 }
