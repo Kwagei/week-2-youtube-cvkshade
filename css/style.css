@@ -78,7 +78,7 @@ body {
     padding-right: 2rem;
     cursor: pointer;
 }
-.menu-last button {
+.menu-last .btn{
     padding: 10px 15px;
     font-size: 16px;
     color: blue;
@@ -103,7 +103,7 @@ button:hover {
     justify-content: center;
     height: 50px;
     align-items: center;
-    width: 85%;
+    width: 83.5%;
     position: absolute;
     right: 0;
     overflow-x: scroll;
@@ -135,9 +135,8 @@ button:hover {
     cursor: pointer;
     
 }
-.secondary-nav p {
-    margin: 0rem 0.5rem;
-    background-color: rgba(192, 192, 192, 0.329);
+.secondary-nav p:hover {
+    background-color: rgba(41, 38, 38, 0.815);
     
     
 }
@@ -164,7 +163,7 @@ main {
 /* background-color: red; */
 }
 .sidebar {
-    width: 17%;
+    width: 19%;
     overflow-y: scroll;
     height: 37em;
     z-index: 1;
@@ -215,12 +214,14 @@ main {
 .signin {
     border-bottom: 1px solid gainsboro;
     border-top: 1px solid gainsboro;
+    padding-left: 1rem;
 }
 .sidebar .signin p {
     width: 80%;
     padding: 0.5rem 0rem 1rem 1rem;
 }
-.sidebar .signin button {
+
+.sidebar .signin .btn{
     padding: 10px 15px;
     font-size: 16px;
     color: blue;
@@ -384,7 +385,7 @@ main {
     height: 4rem;
 }
 .title-div img {
-    height: 35px;
+    height: 25px;
 }
 .title-div p {
     font-size: 24px;
@@ -432,6 +433,7 @@ main {
     }
     .header {
         box-shadow: 0px 2px gray;
+        height: auto;
     }
     .menu-logo .ham .fa-bars {
         display: none
@@ -454,6 +456,10 @@ main {
     }
     .menu-search .fa-user {
         display: block;
+    }
+    .menu-search button {
+        background-color: white;
+        border: none;
     }
     i#user {
         border: 1px solid gainsboro;
